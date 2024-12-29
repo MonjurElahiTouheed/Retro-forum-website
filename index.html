@@ -41,9 +41,8 @@
             Share your favorite opinion and win and wp forum coffee mug!
           </p>
           <label class="input input-bordered flex items-center gap-2 relative rounded-full">
-            <input type="text" class="grow" placeholder="Search" />
-            <button
-              class="bg-[#797DFC] text-white font-bold rounded-3xl py-[12px] w-[100px] absolute right-1">Search</button>
+            <input type="text" id="search-field" class="grow" placeholder="Search" />
+            <button onclick="handleSearch()" class="bg-[#797DFC] text-white font-bold rounded-3xl py-[12px] w-[100px] absolute right-1">Search</button>
           </label>
         </div>
         <div class="w-[24rem] p-[4.25rem] bg-white flex justify-around">
@@ -63,14 +62,31 @@
       </div>
     </div>
   </header>
-  <main>
+  <main class="container mx-auto">
     <!-- main title -->
     <section class="my-20">
-      <h1 class="text-center font-bold text-5xl">Let's Discuss</h1>
-      <p class="text-center px-[34rem] mt-7 text-2xl">Yes, you can run unit tests and view the results directly within the app. The integrated testing features allow for a streamlined .</p>
+      <h1 id="title" class="text-center font-bold text-5xl">Let's Discuss</h1>
+      <p class="text-center px-[21rem] mt-7 text-2xl">Yes, you can run unit tests and view the results directly within
+        the app. The integrated testing features allow for a streamlined .</p>
     </section>
-    <section></section>
+    <div id="spinner" class="text-center mb-10 hidden">
+      <span class="loading loading-bars loading-lg"></span>
+    </div>
+    <section class="flex justify-center gap-7">
+      <div id="all-post-container">
+      </div>
+      <div>
+        <div class="w-[378px] p-5 bg-[#F3F3F5] rounded-2xl">
+          <div class="flex justify-between">
+            <h3 class="font-bold text-xl">Title</h3>
+            <p class="text-lg"><i class="fa-solid fa-check-double mr-2" style="color: #63E6BE;"></i>Mark as read (<span id="childCount">0</span>)</p>
+          </div>
+          <div id="all-title-container"></div>
+        </div>
+      </div>
+    </section>
   </main>
+  <script src="js/app.js"></script>
 </body>
 
 </html>
